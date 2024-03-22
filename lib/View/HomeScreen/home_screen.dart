@@ -31,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     'Upcoming\nEquipments',
     'Total\nLocations'
   ];
+
   List<int> cardCounts = [10, 5, 15, 5];
 
   List<String> featuredCardTitle = [
@@ -381,7 +382,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   featuredListScrollPercent() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 35.0,vertical: 10),
       child: SizedBox(
         height: 5,
         child: LinearProgressIndicator(
