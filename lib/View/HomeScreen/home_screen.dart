@@ -289,7 +289,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
-            'Accrediation',
+            'Accreditation',
             style: featuredStyle,
           ),
         ],
