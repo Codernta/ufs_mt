@@ -21,7 +21,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   TabController? _controller;
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   double _progress = 0.0;
 
 
@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
             Expanded(
               flex: 7,
-              child: tabbarView(),
+              child: tabBarView(),
             )
           ],
         ),
@@ -133,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   }
 
 
-  tabbarView() {
+  tabBarView() {
     return TabBarView(
         controller: _controller,
         children: [
@@ -198,19 +198,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   equipmentCountGrid() {
     return Container(
       height: 200,
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Center(
         child: GridView.builder(
-          itemCount: 4, // Number of items in the grid
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // Number of columns in the grid
-            childAspectRatio: 2.5, // Width to height ratio of each item
+          itemCount: 4,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 2.5,
           ),
           itemBuilder: (BuildContext context, int index) {
             return HomePageGridCard(
               index: index,
               title: cardTitles[index], count: cardCounts[index],
-
             );
           },
         ),
@@ -266,7 +265,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   featuredTrainingList() {
     return Container(
       height: 310,
-      padding: EdgeInsets.only(top: 20, left: 20),
+      padding: const EdgeInsets.only(top: 20, left: 20),
       child: ListView.separated(
           controller: _scrollController,
           itemCount: 6,
